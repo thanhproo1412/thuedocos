@@ -5,6 +5,8 @@ import {
   Flex, Button, ChakraProvider, Container, Heading, IconProps, Icon, Stack, Text, Box, Input, SimpleGrid, Avatar, AvatarGroup, useBreakpointValue,
 } from '@chakra-ui/react'
 // 1. Import the extendTheme function
+import { useState } from 'react'
+
 
 const avatars = [
   {
@@ -53,7 +55,19 @@ const Blur = (props: IconProps) => {
 
 export default function Login() {
 
+  const [isLoginForm, setLoginForm] = useState(true)
+
+  const turnToRegister = () => {
+    setLoginForm(false);
+    console.log(isLoginForm)
+  };
+  const turnToLogin = () => {
+    setLoginForm(true);
+    console.log(isLoginForm)
+  };
+
   return (
+
     <ChakraProvider >
       <Box position={'relative'}>
         <Container
@@ -128,62 +142,7 @@ export default function Login() {
               </Flex>
             </Stack>
           </Stack>
-          <Stack
-            bg={'gray.50'}
-            rounded={'xl'}
-            p={{ base: 4, sm: 6, md: 8 }}
-            spacing={{ base: 8 }}
-            maxW={{ lg: 'lg' }}>
-            <Stack spacing={4}>
-              <Heading
-                color={'gray.800'}
-                lineHeight={1.1}
-                fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
-                Login
-                <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
-                  !
-                </Text>
-              </Heading>
-            </Stack>
-            <Box as={'form'} mt={10}>
-              <Stack spacing={4}>
-                <Input
-                  placeholder="UserName"
-                  bg={'gray.100'}
-                  border={0}
-                  color={'gray.500'}
-                  _placeholder={{
-                    color: 'gray.500',
-                  }}
-                />
-                <Input
-                  placeholder="Password"
-                  bg={'gray.100'}
-                  border={0}
-                  color={'gray.500'}
-                  _placeholder={{
-                    color: 'gray.500',
-                  }}
-                />
-                {/* <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
-                  Upload CV
-                </Button> */}
-              </Stack>
-              <Button
-                fontFamily={'heading'}
-                mt={8}
-                w={'full'}
-                bgGradient="linear(to-r, red.400,pink.400)"
-                color={'white'}
-                _hover={{
-                  bgGradient: 'linear(to-r, red.400,pink.400)',
-                  boxShadow: 'xl',
-                }}>
-                Login
-              </Button>
-            </Box>
-            form
-          </Stack>
+          {isLoginForm ? <LoginForm onClick={turnToRegister} /> : <RegisterForm onClick={turnToLogin} />}
         </Container>
         <Blur position={'absolute'} top={-10} left={-10} style={{ filter: 'blur(70px)' }} />
       </Box>
@@ -191,6 +150,172 @@ export default function Login() {
     </ChakraProvider>
 
 
+  )
+
+}
+
+const RegisterForm = ({ onClick }) => {
+  return (
+
+    <Stack
+      bg={'gray.50'}
+      rounded={'xl'}
+      p={{ base: 4, sm: 6, md: 8 }}
+      spacing={{ base: 8 }}
+      maxW={{ lg: 'lg' }}>
+      <Stack spacing={4}>
+        <Heading
+          color={'gray.800'}
+          lineHeight={1.1}
+          fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
+          RegisterForm
+          <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
+            !
+          </Text>
+        </Heading>
+      </Stack>
+      <Box as={'form'} mt={10}>
+        <Stack spacing={4}>
+          <Input
+            placeholder="UserName"
+            bg={'gray.100'}
+            border={0}
+            color={'gray.500'}
+            _placeholder={{
+              color: 'gray.500',
+            }}
+          />
+          <Input
+            type="password"
+            placeholder="Password"
+            bg={'gray.100'}
+            border={0}
+            color={'gray.500'}
+            _placeholder={{
+              color: 'gray.500',
+            }}
+          />
+          <Input
+            type="password"
+            placeholder="Repeat Password"
+            bg={'gray.100'}
+            border={0}
+            color={'gray.500'}
+            _placeholder={{
+              color: 'gray.500',
+            }}
+          />
+          <Input
+            type="email"
+            isRequired
+            placeholder="Email"
+            bg={'gray.100'}
+            border={0}
+            color={'gray.500'}
+            _placeholder={{
+              color: 'gray.500',
+            }}
+          />
+          {/* <Button fontFamily={'heading'} bg={'gray.200'} color={'gray.800'}>
+      Upload CV
+    </Button> */}
+        </Stack>
+        <Box>
+          <p>Have account?</p>
+          {/* Use the Chakra UI Button as a link */}
+          <Button
+            variant="link"
+            color="blue.500"
+            onClick={onClick}
+          >
+            Go to Login
+          </Button>
+        </Box>
+        <Button
+          fontFamily={'heading'}
+          mt={8}
+          w={'full'}
+          bgGradient="linear(to-r, red.400,pink.400)"
+          color={'white'}
+          _hover={{
+            bgGradient: 'linear(to-r, red.400,pink.400)',
+            boxShadow: 'xl',
+          }}>
+          Register
+        </Button>
+      </Box>
+      form
+    </Stack>
+  )
+}
+
+const LoginForm = ({ onClick }) => {
+  return (
+    <Stack
+      bg={'gray.50'}
+      rounded={'xl'}
+      p={{ base: 4, sm: 6, md: 8 }}
+      spacing={{ base: 8 }}
+      maxW={{ lg: 'lg' }}>
+      <Stack spacing={4}>
+        <Heading
+          color={'gray.800'}
+          lineHeight={1.1}
+          fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
+          Login
+          <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
+            !
+          </Text>
+        </Heading>
+      </Stack>
+      <Box as={'form'} mt={10}>
+        <Stack spacing={4}>
+          <Input
+            placeholder="UserName"
+            bg={'gray.100'}
+            border={0}
+            color={'gray.500'}
+            _placeholder={{
+              color: 'gray.500',
+            }}
+          />
+          <Input
+            type="password"
+            placeholder="Password"
+            bg={'gray.100'}
+            border={0}
+            color={'gray.500'}
+            _placeholder={{
+              color: 'gray.500',
+            }}
+          />
+        </Stack>
+        <Box>
+          <p>Don't have an account yet?</p>
+          {/* Use the Chakra UI Button as a link */}
+          <Button
+            variant="link"
+            color="blue.500"
+            onClick={onClick}
+          >
+            Sign Up Now
+          </Button>
+        </Box>
+        <Button
+          fontFamily={'heading'}
+          mt={8}
+          w={'full'}
+          bgGradient="linear(to-r, red.400,pink.400)"
+          color={'white'}
+          _hover={{
+            bgGradient: 'linear(to-r, red.400,pink.400)',
+            boxShadow: 'xl',
+          }}>
+          Login
+        </Button>
+      </Box>
+      form
+    </Stack>
   )
 
 }

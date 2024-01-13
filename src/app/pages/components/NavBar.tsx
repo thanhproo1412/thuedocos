@@ -38,14 +38,14 @@ export default function WithSubnavigation() {
                             </InputRightElement>
                         </InputGroup>
                     </Show>
-                    <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/login'}>
+                    {/* <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/login'}>
                         Log In
-                    </Button>
-                    <Button as={'a'} display={{ base: 'none', md: 'inline-flex' }} fontSize={'sm'} fontWeight={600} color={'white'} bg={'#1E42DD'} href={'#'}
+                    </Button> */}
+                    <Button as={'a'} display={{ base: 'none', md: 'inline-flex' }} fontSize={'sm'} fontWeight={600} color={'white'} bg={'#1E42DD'} href={'/login'}
                         _hover={{
                             bg: 'pink.300',
                         }}>
-                        Sign Up
+                        Log In
                     </Button>
                 </Stack>
             </Flex>
