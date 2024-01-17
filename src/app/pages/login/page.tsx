@@ -80,11 +80,11 @@ export default function Login() {
             <Heading
               lineHeight={1.1}
               fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
-              Senior web designers{' '}
-              <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
+              Chưa có tài khoản? Hãy đăng ký ngay{' '}
+              {/* <Text as={'span'} bgGradient="linear(to-r, red.400,pink.400)" bgClip="text">
                 &
               </Text>{' '}
-              Full-Stack Developers
+              Full-Stack Developers */}
             </Heading>
             <Stack direction={'row'} spacing={4} align={'center'}>
               <AvatarGroup>

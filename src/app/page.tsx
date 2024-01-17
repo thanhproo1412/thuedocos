@@ -48,17 +48,16 @@ export default function Home() {
                   bg: 'red.400',
                   zIndex: -1,
                 }}>
-                Write once,
+                Thuê
               </Text>
               <br />
               <Text as={'span'} color={'red.400'}>
-                use everywhere!
+                trang phục!
               </Text>
             </Heading>
             <Text color={'gray.500'}>
-              Snippy is a rich coding snippets app that lets you create your own code
-              snippets, categorize them, and even sync them in the cloud so you can use them
-              anywhere. All that is free!
+              Chào mừng bạn đến với trang web cho thuê trang phục cosplay, nơi bạn có thể khám phá và trải nghiệm thế giới ảo với
+              những bộ trang phục độc đáo, chất lượng cao, giúp bạn tỏa sáng tại mọi sự kiện và hóa thân vào nhân vật mình yêu thích.
             </Text>
             <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
               <Button

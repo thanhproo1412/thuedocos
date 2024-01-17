@@ -236,57 +236,33 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: 'Diễn đàn',
+        label: 'Đồ cho thuê',
         // href: '/diendan',
         children: [
             {
-                label: 'Chăm xe – Chơi xe',
+                label: 'Game',
                 href: '#',
             },
             {
-                label: 'Công nghệ ô tô',
+                label: 'Anime',
                 href: '#',
             },
             {
-                label: 'Đánh giá xe',
+                label: 'Lotita',
                 href: '#',
             },
             {
-                label: 'Giao thông – Lái xe',
+                label: 'Hán phục',
                 href: '#',
-            },
-            {
-                label: 'Hỏi – Đáp',
-                href: '#',
-            },
-            {
-                label: 'Mẹo sử dụng xe',
-                href: '#',
-            },
-            {
-                label: 'Phong cách sống',
-                href: '#',
-            },
-            {
-                label: 'Tâm sự',
-                href: '#',
-            },
-            {
-                label: 'Tin tức',
-                href: '#',
-            },
-            {
-                label: 'Cộng đồng 1 tuổi!',
-                href: '#',
-            },
+            }
         ],
     },
     {
-        label: 'Sự Kiện',
+        label: 'Đồ pass',
         href: '/sukien',
     },
     {
-        label: 'Thư Viện',
-        href: '/thuvien',
+        label: 'Về chúng tôi',
+        href: '/about',
     },
 ]
