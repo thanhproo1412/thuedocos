@@ -2,7 +2,7 @@
 
 import {
     Box, Flex, Text, IconButton, Button, Stack, Collapse, Icon, Popover, PopoverTrigger, PopoverContent, useColorModeValue,
-    useBreakpointValue, useDisclosure, Image, Input, InputGroup, InputRightElement, Show,
+    useBreakpointValue, useDisclosure, Image, Input, InputGroup, InputRightElement, Show, Link
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon, SearchIcon, } from '@chakra-ui/icons'
 import styles from './css/NavBarCss.module.css'
@@ -22,7 +22,9 @@ export default function WithSubnavigation() {
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
                     <Text textAlign={useBreakpointValue({ base: 'center', md: 'left' })} fontFamily={'heading'} color={useColorModeValue('gray.800', 'white')}>
                         <Show above='sm'>
-                            <Image boxSize='50px' objectFit='cover' src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+                            <Link href='#'>
+                                <Image boxSize='50px' objectFit='cover' src='/imgs/logo/logo.png' alt='Thuê đồ cos' />
+                            </Link>
                         </Show>
                     </Text>
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -258,8 +260,8 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: 'Đồ pass',
-        href: '/sukien',
+        label: 'Tìm dàn',
+        href: '/posts',
     },
     {
         label: 'Về chúng tôi',
